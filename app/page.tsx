@@ -1,103 +1,52 @@
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getDiyaImages, getDishaImages, getTrioImages, getOtherImages } from '@/lib/utils';
+
+const diyaImg = getDiyaImages()[13];
+const dishaImg = getDishaImages()[2];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex h-screen w-screen overflow-hidden font-sans relative">
+      {/* Diya Section */}
+      <motion.div
+        className="group relative w-1/2 h-full bg-pink-600 hover:w-[60%] transition-all duration-700 ease-in-out overflow-hidden"
+        whileHover={{ scale: 1.02 }}
+      >
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
+          <Image src={diyaImg} width={100} height={100} alt="Disha" className="w-64 h-64 rounded-4xl object-cover shadow-xl" />
+          <h2 className="text-3xl mt-4 font-bold text-pink-100">Diya</h2>
+          <p className="mt-2 text-sm text-pink-200">My Little Artist 🎨❤️</p>
+          <Link href="/diya">
+            <button className="mt-6 bg-pink-500 hover:bg-pink-600 cursor-pointer text-white font-bold px-6 py-2 rounded-full shadow-lg">
+              Open Me!
+            </button>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </motion.div>
+
+      {/* Divider */}
+      <div className="w-0.5 bg-gradient-to-b from-black via-gray-800 to-black skew-y-3 z-20" />
+
+      {/* Disha Section */}
+      <motion.div
+        className="group relative w-1/2 h-full bg-gray-900 hover:w-[60%] transition-all duration-700 ease-in-out overflow-hidden"
+        whileHover={{ scale: 1.02 }}
+      >
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center text-white">
+          <Image src={dishaImg} width={100} height={100} alt="Disha" className="w-64 h-64 rounded-4xl object-cover shadow-xl" />
+          <h2 className="text-3xl mt-4 font-bold">Disha</h2>
+          <p className="mt-2 text-sm text-gray-300">Boss Lady of the Feed 📱</p>
+          <Link href="/disha">
+            <button className="mt-6 bg-gray-800 hover:bg-gray-900 cursor-pointer font-bold text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-100">
+              Noo! Open Me!
+            </button>
+          </Link>
+        </div>
+      </motion.div>
     </div>
   );
 }

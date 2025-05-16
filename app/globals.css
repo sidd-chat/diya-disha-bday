@@ -24,3 +24,47 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes scroll-left-40 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right-40 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+@keyframes scroll-left-50 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right-50 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+@keyframes scroll-left-60 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right-60 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+.animate-scroll-left-40 {
+  animation: scroll-left-40 40s linear infinite;
+}
+.animate-scroll-right-40 {
+  animation: scroll-right-40 40s linear infinite;
+}
+.animate-scroll-left-50 {
+  animation: scroll-left-50 50s linear infinite;
+}
+.animate-scroll-right-50 {
+  animation: scroll-right-50 50s linear infinite;
+}
+.animate-scroll-left-60 {
+  animation: scroll-left-60 60s linear infinite;
+}
+.animate-scroll-right-60 {
+  animation: scroll-right-60 60s linear infinite;
+}
