@@ -1,12 +1,15 @@
 'use client';
 
+/* eslint-disable react/no-unescaped-entities */
+
+
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { getDishaImages, getDiyaImages, getTrioImages, getOtherImages } from '@/lib/utils';
 
 const galleryImages = getDiyaImages();
-const trioImages = getTrioImages();
+// const trioImages = getTrioImages();
 const allImages = [...getDiyaImages(), ...getDishaImages(), ...getTrioImages(), ...getOtherImages()];
 
 export default function DiyaPage() {
